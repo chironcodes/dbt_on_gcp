@@ -6,3 +6,9 @@ sources:
       schema: thelook_ecommerce
       tables:
         - name: distribution_centers
+        - name: events
+        - name: inventory_items
+        - name:  order_items
+        - name:  orders
+        - name:  products
+        - name:  users

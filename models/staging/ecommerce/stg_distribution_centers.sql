@@ -4,10 +4,10 @@ WITH source AS (
 
 renamed as (
     select
-        {{ adapter.quote("id") }} AS id_dcenter,
-        {{ adapter.quote("name") }} AS name_center,
-        {{ adapter.quote("latitude") }} AS geo_lat,
-        {{ adapter.quote("longitude") }} AS geo_long
+        {{ adapter.quote("id") }} AS distribution_center_id,
+        {{ adapter.quote("name") }} AS name,
+        {{ adapter.quote("latitude") }} AS latitude,
+        {{ adapter.quote("longitude") }} AS longitude
 
     from source
 )
