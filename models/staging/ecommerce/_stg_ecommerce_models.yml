@@ -10,20 +10,18 @@ models:
         tests:
           - unique
           - not_null
-
       - name: name
         description: 'name'
-
       - name: latitude
         description: 'Distribution center geo data latitude'
-
       - name: longitude
         description: 'Distribution center geo data longitude'
     versions:
-      - v: 1    
+      - v: 1
 
   - name: stg_order_items
     description: Fact table with all orders
+    latest_version: 1
     columns:
       - name: order_item_id
         description: Unique identifier for each order
@@ -51,10 +49,11 @@ models:
       - name: sale_price
         description: Sale price of order item
     versions:
-      - v: 1   
+      - v: 1
 
   - name: stg_events
     description: Fact table with all user events
+    latest_version: 1
     columns:
       - name: event_id
         description: Unique identifier for each event
@@ -86,10 +85,11 @@ models:
       - name: event_type
         description: Type of event
     versions:
-      - v: 1   
+      - v: 1
 
   - name: stg_order_items
     description: Fact table with all order items
+    latest_version: 1
     columns:
       - name: order_item_id
         description: Unique identifier for each order item
@@ -117,10 +117,11 @@ models:
       - name: sale_price
         description: Sale price of the item
     versions:
-      - v: 1   
+      - v: 1
 
   - name: stg_products
     description: Fact table with all products
+    latest_version: 1
     columns:
       - name: product_id
         description: Unique identifier for each product
@@ -144,10 +145,11 @@ models:
       - name: distribution_center_id
         description: Identifier of the distribution center holding the product
     versions:
-      - v: 1   
+      - v: 1
 
   - name: stg_users
     description: Dimension table with all users
+    latest_version: 1
     columns:
       - name: user_id
         description: Unique identifier for each user
@@ -183,4 +185,36 @@ models:
       - name: created_at
         description: Timestamp when the user account was created
     versions:
-      - v: 1   
+      - v: 1
+  - name: stg_inventory_items
+    description: Fact table with all inventory items from the public_ecommerce schema
+    columns:
+      - name: inventory_item_id
+        description: Unique identifier for each inventory item
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: Identifier of the product associated with the inventory item
+      - name: created_at
+        description: Timestamp when the inventory item was created
+      - name: sold_at
+        description: Timestamp when the inventory item was sold (if applicable)
+      - name: cost
+        description: Cost of the inventory item
+      - name: product_category
+        description: Category of the product associated with the inventory item
+      - name: product_name
+        description: Name of the product associated with the inventory item
+      - name: product_brand
+        description: Brand of the product associated with the inventory item
+      - name: product_retail_price
+        description: Retail price of the product associated with the inventory item
+      - name: product_department
+        description: Department of the product associated with the inventory item
+      - name: product_sku
+        description: Stock Keeping Unit (SKU) of the product associated with the inventory item
+      - name: product_distribution_center_id
+        description: Identifier of the distribution center storing the inventory item
+    versions:
+      - v: 1
