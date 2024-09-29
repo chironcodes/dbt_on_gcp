@@ -7,6 +7,9 @@ models:
     columns:
         - name: id_dcenter
           description: 'Distribution center id'
+          tests:
+            - unique
+            - not_null
 
         - name: name
           description: 'name'
