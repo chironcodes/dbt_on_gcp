@@ -3,7 +3,7 @@ with source as (
 ),
 renamed as (
     select
-        {{ adapter.quote("id") }} AS order_id,
+        {{ adapter.quote("id") }} AS order_item_id,
         {{ adapter.quote("order_id") }} AS order_id,
         {{ adapter.quote("user_id") }} AS user_id,
         {{ adapter.quote("product_id") }} AS product_id,
