@@ -1,0 +1,8 @@
+version: 1
+
+sources:
+    - name: public_ecommerce
+      database: bigquery-public-data
+      schema: thelook_ecommerce
+      tables:
+        - name: distribution_centers
